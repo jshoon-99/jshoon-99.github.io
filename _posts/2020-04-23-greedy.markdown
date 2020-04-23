@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "신박한 그리디"
+date:   2020-04-23 11:02:06 +0900
+categories: jekyll update
+
+---
+
+## 그리디 알고리즘
+
+그리디 알고리즘은 선택하는 순간에서 당장 그 순간에  가장 최적의 답을 찾아 적합한 결과를 도출하기 위한 알고리즘 기법이다. 
+
+이러한 그리디 알고리즘을 사용하여 다양한 문제의 답을 도출할 수있따. 
+
+## <맛집 줄서기>
+
+많은 사람들이 유명한 맛집에서 식사를 하기 위해 줄을 서있다.  
+
+각 사람들마다 식사하는 시간이 주어졌을 때, 가장 빨리 모든 사람들이 식사하는 경우의 시간을 구하는 문제를 해결해보겠습니다. 
+
+이 때 문제를 해결하기 위해서는 모든 사람들이 가장 빠르게 식사를 하기 위해서는 뒷 사람들이 기다리는 시간을 줄이면 되겠다. 
+
+빠른 사람부터 식사를 하면 뒷사람들이 기다리는 시간이 줄어드니까, 전체적인 시간이 줄어드게 됩니다. 따라서 식사를 빨리하는 사람 순으로 오름차순을 한 뒤에 계산을 하면 된다.
+
+
+
+import java.io.*; 
+
+import java.util.*; 
+
+
+
+public class Main {    
+
+public static void main(String[] args) throws IOException {    	
+
+Scanner scanner= new Scanner(System.in);    	
+
+int n = scanner.nextInt();    	
+
+int[] arr = new int[n];    	
+
+​	for(int i = 0; i<n; i++) {    
+
+​			arr[i] = scanner.nextInt();    	
+
+​		}    	
+
+Arrays.sort(arr);          	
+
+int sum = 0;    	
+
+int j = 0;    	
+
+for(int i = 0; i<n; i++) {    		
+
+​	sum += arr[i];    		
+
+​	j += sum;    	
+
+​		}    	
+
+System.out.println(j);    	    }
+
+ }
